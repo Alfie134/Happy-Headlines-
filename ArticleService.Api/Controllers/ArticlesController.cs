@@ -9,11 +9,13 @@ namespace ArticleService.Api.Controllers;
 public class ArticlesController : ControllerBase
 {
     private readonly IArticlesService _artivcleService;
+    private readonly IArticleRepository _articleRepository;
 
 
-    public ArticlesController(IArticlesService articlesService)
+    public ArticlesController(IArticlesService articlesService, IArticleRepository articleRepository)
     {
         _artivcleService = articlesService;
+        _articleRepository = articleRepository;
     }
 
     [HttpPost]
@@ -26,22 +28,36 @@ public class ArticlesController : ControllerBase
         });
     }
 
-    [HttpGet]
-    public async Task<IActionResult> GetArticleById(int id)
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetArticleById(string id)
     {
-        return null;
+        var result = await _artivcleService.GetArticlesByIdAsync(id);
+
+        if (result == null)
+            return NotFound();
+
+        return Ok(result);
     }
 
-    [HttpPut]
-    public async Task<IActionResult> UpdateArticle(int id)
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> UpdateArticle(int id, UpdateArticleRequest request)
     {
-        return null;
+        var updateArticle = await _artivcleService.UpdateArticleAsync(id, request);
+
+        if (updateArticle is null)
+            return NotFound();
+
+        return Ok(updateArticle);
     }
 
     [HttpDelete]
-    public async Task<IActionResult> DeleteArticle(int id)
+    public Task<bool> DeleteArticle(string id)
     {
-        return null;
+        if (!int.TryParse(id, out var intId))
+            return Task.FromResult(false);
+
+        var result = _articleRepository.Delete(intId);
+        return Task.FromResult(result);
     }
 
 }
