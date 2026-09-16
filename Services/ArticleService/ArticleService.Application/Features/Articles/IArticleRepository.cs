@@ -3,6 +3,6 @@ namespace ArticleService.Application.Features.Articles;
 public interface IArticleRepository
 {
 
-    Domain.Entities.Article GetById(int id);
+    public Domain.Entities.Article GetById();
     bool Delete(int id);
 }

@@ -1,4 +1,5 @@
 using ArticleService.Application.Features.Articles;
+using ArticleService.Domain.Entities;
 
 namespace ArticleService.Infrastructure.Features.Article;
 
