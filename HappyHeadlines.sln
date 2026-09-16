@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DraftService", "DraftServic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DraftService.Api", "DraftService.Api", "{8C7EB35C-EAB1-5B73-4B9C-D66450B8F2BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DraftServuce.Api", "Services\DraftService\DraftService.Api\DraftServuce.Api.csproj", "{64A8D5FE-CC12-42EC-9BB0-DFD4B6FCFD78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DraftService.Api", "Services\DraftService\DraftService.Api\DraftService.Api.csproj", "{64A8D5FE-CC12-42EC-9BB0-DFD4B6FCFD78}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DraftService.Application", "Services\DraftService\DraftService.Application\DraftService.Application.csproj", "{21391990-2E69-4FA1-A3EE-015FC8822A90}"
 EndProject
