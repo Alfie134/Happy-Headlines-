@@ -6,7 +6,7 @@ namespace ArticleService.Infrastructure.Features.Article;
 public class ArticleRepository : IArticleRepository
 {
 
-    public Domain.Entities.Article GetById()
+    public Domain.Entities.Article GetById(int id)
     {
         throw new NotImplementedException();
     }
