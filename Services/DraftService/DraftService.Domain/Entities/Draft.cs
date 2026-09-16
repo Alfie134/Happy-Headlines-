@@ -1,8 +1,8 @@
-namespace Services.DraftService.DraftService.Domain.Entities;
+namespace DraftService.Domain.Entities;
 
 public class Draft()
 {
-    public Guid Id { get; set; }
+    public Guid DraftId { get; set; }
     public string Title { get; set; }
     public string Content { get; set; }
     public string Author { get; set; }
